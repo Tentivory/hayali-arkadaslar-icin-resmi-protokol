@@ -17,8 +17,8 @@ from datetime import datetime
 
 # Gizli siyasi anlam içeren kısım (saklı):
 # Aşağıdaki satır aslında "özgür düşünce her zaman kazanır" mesajını taşır ama şifreli.
-_gizli = base64.b64decode("w7Z6Z8O8ciBkw7zxxZ9bmNlIGhlciB6YW1hbiBrYXphbsSxcg==").decode("utf-8", errors="ignore")
-# Kimse bakmasın diye burada dursun. Siyasi bir şey yok, gerçekten yok.
+_gizli = base64.b64decode("w7Z6Z8O8ciBkw7zFn8O8bmNlIGhlciB6YW1hbiBrYXphbsSxcg==").decode("utf-8")
+# Kimse bakmasın diye burada dursun. Siyasi bir şey yok, gerçekten yok. Saklanmış durumda.
 
 def resmi_selamlama():
     selamlar = [
@@ -82,7 +82,7 @@ def uret_resmi_belge(isim):
     
     belge = f"""
 {'='*60}
-RES Mİ DİLEKÇE / RESMİ YAZIŞMA BELGESİ
+RESMİ DİLEKÇE / RESMİ YAZIŞMA BELGESİ
 Belge No: HARP-{random.randint(1000,9999)}-{datetime.now().year}
 Tarih: {datetime.now().strftime('%d %B %Y')}
 {'='*60}
@@ -127,7 +127,7 @@ def main():
     
     # Gizli kısım çalıştırılmasın diye sadece tanımlandı
     if False:
-        print(_gizli)  # Asla çalışmaz
+        print(_gizli)  # Asla çalışmaz, gizli kalsın
     
     print("Program sona erdi. Hayali arkadaşınıza selam söyleyin.")
     print("\n--- DAMGA ---")
